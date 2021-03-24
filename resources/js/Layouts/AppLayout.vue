@@ -20,6 +20,16 @@
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
+
+                                <jet-nav-link :href="route('projets.index')" :active="route().current('projets.*')">
+                                    Projets
+                                </jet-nav-link>
+
+                                <jet-nav-link :href="route('clients.index')" :active="route().current('clients.*')">
+                                    Clients
+                                </jet-nav-link>
+
+
                             </div>
                         </div>
 
