@@ -1,5 +1,10 @@
 <template>
     <app-layout>
+    <div class="relative z-0 w-full bg-gray-900">
+            <div class="flex justify-between pt-20 pb-20 z-0 ">
+                <h1 class="ml-20 text-4xl text-white font-bold">Projets</h1>
+            </div>
+     </div>
         <div id="opacity">
             <button v-on:click="confirmDelete">Delete</button>
             <form @submit.prevent="submit">
