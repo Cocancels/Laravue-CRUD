@@ -59,7 +59,7 @@
                 <input class="w-1/2 rounded-lg border-gray-300" name="vendus" type="number" v-model="form.jours_vendus_projet">
                 </div>
 
-                <button class="text-white p-3 mb-6 bg-blue-600 rounded-lg items-end content-end " type="submit" :disabled="form.processing">Sauvegarder</button>
+                <button class="text-white p-3 mb-6 bg-blue-600 rounded-lg" type="submit" :disabled="form.processing">Sauvegarder</button>
             </form>
         </div>
     </app-layout>
