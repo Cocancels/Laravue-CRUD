@@ -15,7 +15,7 @@ class CreateProjetsTable extends Migration
     {
         Schema::create('projets', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id')->constrained('clients');
+            $table->foreignId('client_id')->constrained('clients')->onDelete('cascade');
             $table->string("nom_responsable_projet");
             $table->string("prenom_responsable_projet");
             $table->integer("telephone_responsable_projet");

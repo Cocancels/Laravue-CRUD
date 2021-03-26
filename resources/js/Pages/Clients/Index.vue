@@ -16,7 +16,14 @@
             <tr v-for="client in clients">
                 <td>{{ client.raison_sociale_client }}</td>
                 <td>{{ client.description_client }}</td>
-                <td>3</td>
+                <td>
+                    <div v-for="client_projet in clients_projets">
+                        <p v-if="client_projet.id === client.id">
+                            {{ client_projet.client_projet_number }}
+                        </p>
+                    </div>
+                </td>
+                <td><inertia-link id="edit-client" :href="route('clients.edit', { id: client.id })">Editer</inertia-link></td>
             </tr>
             </tbody>
         </table>
@@ -29,10 +36,12 @@
 import AppLayout from '@/Layouts/AppLayout'
 
 export default {
-    props: ['clients'],
+    props: ['clients', 'projets', 'clients_projets'],
     components: {
         AppLayout,
     },
+
+
 }
 </script>
 

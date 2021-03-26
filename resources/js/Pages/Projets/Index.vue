@@ -16,12 +16,17 @@
             <tbody>
             <tr v-for="projet in projets">
                 <td>{{ projet.titre_projet }}</td>
-                <td v-for="client in clients">
-                    <p v-if="client.id === projet.client_id">
-                        {{ client.raison_sociale_client }}
-                    </p>
+                <td>
+                    <div v-for="client in clients">
+                        <p v-if="client.id === projet.client_id">
+                            {{ client.raison_sociale_client }}
+                        </p>
+                    </div>
                 </td>
                 <td>{{ projet.description_projet }}</td>
+                <td>
+                    <inertia-link id="edit-projets" :href="route('projets.edit', { id: projet.id })">Editer</inertia-link>
+                </td>
             </tr>
             </tbody>
         </table>

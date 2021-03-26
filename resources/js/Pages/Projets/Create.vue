@@ -3,7 +3,7 @@
         <div>
             <form @submit.prevent="submit">
                 <select v-model="form.client_id">
-                    <option>1</option>
+                    <option v-for="client in clients">{{ client.raison_sociale_client }}</option>
                 </select>
                 <input type="text" v-model="form.nom_responsable_projet">
                 <input type="text" v-model="form.prenom_responsable_projet">
@@ -14,6 +14,7 @@
                 <input type="date" v-model="form.debut_projet">
                 <input type="date" v-model="form.fin_projet">
                 <input type="number" v-model="form.jours_vendus_projet">
+
                 <button type="submit" :disabled="form.processing">Créer</button>
             </form>
         </div>
@@ -25,6 +26,8 @@ import AppLayout from "@/Layouts/AppLayout";
 export default {
     name: "Create",
     components: {AppLayout},
+
+    props: ['clients'],
 
     data(){
         return{

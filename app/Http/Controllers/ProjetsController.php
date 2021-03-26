@@ -32,8 +32,9 @@ class ProjetsController extends Controller
      */
     public function create()
     {
+        $clients = Client::all();
 
-        return Inertia::render('Projets/Create');
+        return Inertia::render('Projets/Create', compact('clients'));
 
     }
 
@@ -45,19 +46,22 @@ class ProjetsController extends Controller
      */
     public function store(Request $request)
     {
-        $client = new Projet;
-        $client->client_id = $request->input('client_id');
-        $client->nom_responsable_projet = $request->input('nom_responsable_projet');
-        $client->prenom_responsable_projet = $request->input('prenom_responsable_projet');
-        $client->telephone_responsable_projet = $request->input('telephone_responsable_projet');
-        $client->mail_responsable_projet = $request->input('mail_responsable_projet');
-        $client->titre_projet = $request->input('titre_projet');
-        $client->description_projet = $request->input('description_projet');
-        $client->debut_projet = $request->input('debut_projet');
-        $client->fin_projet = $request->input('fin_projet');
-        $client->status_projet = "En cours";
-        $client->jours_vendus_projet = $request->input('jours_vendus_projet');
-        $client->save();
+        $projet = new Projet;
+        $client_name = $request->input('client_id');
+        $new_client_id = Client::where("raison_sociale_client", $client_name)->get();
+
+        $projet ->client_id = $new_client_id[0]->id;
+        $projet ->nom_responsable_projet = $request->input('nom_responsable_projet');
+        $projet ->prenom_responsable_projet = $request->input('prenom_responsable_projet');
+        $projet ->telephone_responsable_projet = $request->input('telephone_responsable_projet');
+        $projet ->mail_responsable_projet = $request->input('mail_responsable_projet');
+        $projet ->titre_projet = $request->input('titre_projet');
+        $projet ->description_projet = $request->input('description_projet');
+        $projet ->debut_projet = $request->input('debut_projet');
+        $projet ->fin_projet = $request->input('fin_projet');
+        $projet ->status_projet = "En cours";
+        $projet ->jours_vendus_projet = $request->input('jours_vendus_projet');
+        $projet ->save();
 
         return redirect()->route('projets.index');
 
@@ -79,11 +83,14 @@ class ProjetsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit($id)
     {
-        //
+        $projet = Projet::findorfail($id);
+        $actualClient = Client::where("id", $projet->client_id)->get();
+        $clients = Client::all();
+        return Inertia::render('Projets/Edit', compact("projet", 'actualClient', 'clients'));
     }
 
     /**
@@ -91,21 +98,43 @@ class ProjetsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $projet = Projet::findorfail($id);
+        $client_name = $request->input('client_id');
+        $new_client_id = Client::where("raison_sociale_client", $client_name)->get();
+
+        $projet->client_id = $new_client_id[0]->id;
+        $projet->nom_responsable_projet = $request->input('nom_responsable_projet');
+        $projet->prenom_responsable_projet = $request->input('prenom_responsable_projet');
+        $projet->telephone_responsable_projet = $request->input('telephone_responsable_projet');
+        $projet->mail_responsable_projet = $request->input('mail_responsable_projet');
+        $projet->titre_projet = $request->input('titre_projet');
+        $projet->description_projet = $request->input('description_projet');
+        $projet->debut_projet = $request->input('debut_projet');
+        $projet->fin_projet = $request->input('fin_projet');
+        $projet->status_projet = "En cours";
+        $projet->jours_vendus_projet = $request->input('jours_vendus_projet');
+        $projet->save();
+
+        return redirect()->route('projets.index');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        $projet = Projet::findorfail($id);
+        $projet->delete();
+
+        return redirect()->route('projets.index');
     }
 }
