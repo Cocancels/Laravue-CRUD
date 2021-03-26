@@ -14,6 +14,11 @@
                 <input type="text" v-model="form.description_projet">
                 <input type="date" v-model="form.debut_projet">
                 <input type="date" v-model="form.fin_projet">
+                <select name="status" id="status" v-model="form.status_projet">
+                    <option value="En cours">En cours</option>
+                    <option value="Terminé">Terminé</option>
+                    <option value="Annulé">Annulé</option>
+                </select>
                 <input type="number" v-model="form.jours_vendus_projet">
                 <button type="submit" :disabled="form.processing">Editer</button>
             </form>

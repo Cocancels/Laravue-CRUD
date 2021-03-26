@@ -7,31 +7,36 @@
             </div>
         </div>
 
-            <table class="table-auto z-50 shadow">
+            <table class="table-fixed z-50 shadow rounded-2xl w-4/5">
                 <thead>
-                <tr>
-                    <th class="p-6">Titre</th>
-                    <th class="p-6">Client</th>
-                    <th class="p-6">Description</th>
-                    <th class="p-6">Tickets</th>
+                <tr class="border-b-2 uppercase text-gray-500">
+                    <th class="text-left p-6 w-1/6">Titre</th>
+                    <th class="text-left p-6 w-1/6">Client</th>
+                    <th class="text-left p-6 w-2/6 overflow-hidden">Description</th>
+                    <th class="text-left p-6 w-1/6">Tickets</th>
+                    <th class="text-left p-6 w-1/6"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="pl-1.5" v-for="projet in projets">
-                    <td class="pl-1.5">{{ projet.titre_projet }}</td>
-                    <td>
+                <tr class="pl-6 text text-xl" v-for="projet in projets">
+                    <td class="pl-6 pt-5 pb-5">{{ projet.titre_projet }}</td>
+                    <td class="pl-6 pt-5 pb-5">
                         <div v-for="client in clients">
                             <p v-if="client.id === projet.client_id">
                                 {{ client.raison_sociale_client }}
                             </p>
                         </div>
                     </td>
-                    <td>{{ projet.description_projet }}</td>
-                    <td>
-
+                    <td class="pl-6 pt-5 pb-5">
+                        <p class="font-thin">
+                        {{ projet.description_projet }}
+                        </p>
                     </td>
-                    <td>
-                        <inertia-link id="edit-projets" :href="route('projets.edit', { id: projet.id })">Editer</inertia-link>
+                    <td class="pl-6 pt-5 pb-5" id="">
+                        {{ projet.status_projet }}
+                    </td>
+                    <td class="pl-6">
+                        <inertia-link class="text-blue-500" id="edit-projets" :href="route('projets.edit', { id: projet.id })">Editer</inertia-link>
                     </td>
                 </tr>
                 </tbody>
@@ -57,5 +62,9 @@ export default {
 
     table{
         margin: auto;
+    }
+
+    .termine{
+        background-color: green;
     }
 </style>

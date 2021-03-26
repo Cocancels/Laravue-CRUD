@@ -116,7 +116,15 @@ class ProjetsController extends Controller
         $projet->description_projet = $request->input('description_projet');
         $projet->debut_projet = $request->input('debut_projet');
         $projet->fin_projet = $request->input('fin_projet');
-        $projet->status_projet = "En cours";
+
+        if($request->input('status_projet') === "En cours"){
+            $projet->status_projet = "En cours";
+        } else if($request->input('status_projet') === "Terminé"){
+            $projet->status_projet = "Terminé";
+        } else if($request->input('status_projet') === "Annulé"){
+            $projet->status_projet = "Annulé";
+        }
+
         $projet->jours_vendus_projet = $request->input('jours_vendus_projet');
         $projet->save();
 
