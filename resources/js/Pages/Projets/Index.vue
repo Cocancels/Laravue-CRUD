@@ -1,13 +1,13 @@
 <template>
     <app-layout>
-        <div class="relative z-0 w-full bg-gray-900">
-            <div class="flex justify-between pt-20 pb-20 z-0 ">
+        <div class="relative z-0 w-full bg-gray-800">
+            <div class="flex justify-between pt-20 pb-20 z-0 w-4/5 mx-auto">
                 <h1 class="ml-20 text-4xl text-white font-bold">Projets</h1>
                 <inertia-link class="mr-20 text-white bg-indigo-500 pt-4 pb-4 pr-6 pl-6 rounded-2xl" id="create-projets" :href="route('projets.create')">+  Créer un projet</inertia-link>
             </div>
         </div>
 
-            <table class="table-fixed z-50 shadow rounded-2xl w-4/5">
+            <table class="table-fixed z-50 shadow rounded-2xl w-4/5 mx-auto">
                 <thead>
                 <tr class="border-b-2 uppercase text-gray-500">
                     <th class="text-left p-6 w-1/6">Titre</th>
@@ -32,7 +32,7 @@
                         {{ projet.description_projet }}
                         </p>
                     </td>
-                    <td class="pl-6 pt-5 pb-5" id="">
+                    <td class="pl-6 pt-5 pb-5" >
                         {{ projet.status_projet }}
                     </td>
                     <td class="pl-6">
@@ -49,7 +49,9 @@ import AppLayout from "@/Layouts/AppLayout";
 export default {
     props: ['projets', 'clients'],
     name: "Index",
-    components: {AppLayout}
+    components: {AppLayout},
+
+
 }
 </script>
 
@@ -60,11 +62,8 @@ export default {
 
     }
 
-    table{
-        margin: auto;
-    }
 
-    .termine{
+    #termine{
         background-color: green;
     }
 </style>
