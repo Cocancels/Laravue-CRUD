@@ -33,7 +33,16 @@
                         </p>
                     </td>
                     <td class="pl-6 pt-5 pb-5" >
-                        {{ projet.status_projet }}
+                        <p class="bg-yellow-100 text-yellow-800 inline p-2 rounded" v-if="projet.status_projet === 'En cours'">
+                            {{ projet.status_projet }}
+                        </p>
+                        <p class="bg-green-100 text-green-800 inline p-2 rounded" v-if="projet.status_projet === 'Terminé'">
+                            {{ projet.status_projet }}
+                        </p>
+                        <p class="bg-red-100 text-red-800 inline p-2 rounded" v-if="projet.status_projet === 'Annulé'">
+                            {{ projet.status_projet }}
+                        </p>
+
                     </td>
                     <td class="pl-6">
                         <inertia-link class="text-blue-500" id="edit-projets" :href="route('projets.edit', { id: projet.id })">Editer</inertia-link>
