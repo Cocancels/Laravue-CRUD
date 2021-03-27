@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Client;
 use App\Models\Projet;
 use Illuminate\Database\Seeder;
@@ -19,8 +20,11 @@ class DatabaseSeeder extends Seeder
     {
       Schema::disableForeignKeyConstraints();
       DB::table('projets')->truncate();
+      DB::table('clients')->truncate();
+      DB::table('users')->truncate();
       Client::factory(5)->create();
       Projet::factory(20)->create();
+      User::factory(1)->create();
       Schema::enableForeignKeyConstraints();
     }
 }
