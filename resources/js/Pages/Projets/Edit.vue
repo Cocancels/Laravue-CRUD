@@ -2,13 +2,13 @@
     <app-layout>
     <div class="relative z-0 w-full bg-gray-900">
             <div class="flex justify-around pt-20 pb-20 z-0 ">
-                <h1 class="ml-20 text-4xl text-white font-bold">{{ form.titre_projet }}</h1>
-                 <button  class="text-white p-3 mb-6 bg-red-600 rounded-lg" v-on:click="confirmDelete">Delete</button>
+                <h1  class="pb-10 ml-10 text-4xl text-white font-bold">{{ form.titre_projet }}</h1>
+                 <button  class="text-white px-6 py-2 mb-6 bg-red-600 rounded-lg" v-on:click="confirmDelete">Delete</button>
             </div>
      </div>
         <div class="flex justify-center " id="opacity">
 
-            <form class="w-9/12 flex-direction: column" @submit.prevent="submit">
+            <form class="rounded-lg pl-16 bg-white top-56 absolute w-9/12 flex-direction: column" @submit.prevent="submit">
 
                 <h2 class="pb-4 pt-8 font-bold text-3xl ">Responsable projet</h2>
                 <p class="pb-4 font-thin text-sm text-gray-400">Ces informations serviront a savoir qui dirige le projet du coté du client</p>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="pb-4 flex">
                  <label class="w-1/4" for="email">Email</label>
-                <input class="w-1/2 rounded-lg border-gray-300" placeholder="you@example.fr" name="email" type="text" v-model="form.mail_responsable_projet">
+                <input class="w-1/2 rounded-lg border-gray-300" placeholder="you@example.fr" name="email" type="email" v-model="form.mail_responsable_projet">
                 </div>
                 <h2 class="pb-4 pt-8 font-bold text-3xl">Information projet</h2>
 
@@ -63,7 +63,7 @@
 
         </div>
 
-        <div id="none" v-show="isConfirmed">
+        <div class="border-4 p-16 rounded-lg" id="none" v-show="isConfirmed">
             <p>Supprimer le projet {{ form.titre_projet }} </p>
             <p></p>
             <button class="text-white p-3 mb-6 bg-blue-600 rounded-lg mr-8 mt-8" v-on:click="confirmDelete">Retour</button>
@@ -134,6 +134,7 @@ export default {
         margin-left: 50%;
         position: absolute;
         transform: translateX(-50%)  translateY(-50%);
-        background-color: white;
+        background-color: grey;
+
     }
 </style>

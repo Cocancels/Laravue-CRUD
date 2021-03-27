@@ -1,13 +1,13 @@
 <template>
     <app-layout>
         <div class="relative z-0 w-full bg-gray-900">
-            <div class="flex justify-between pt-20 pb-20 z-0 ">
-                <h1 class="ml-20 text-4xl text-white font-bold">Créer un Projet</h1>
+            <div class="flex  pt-20 pb-20 z-0 ">
+                <h1 class="pb-20 ml-72 text-4xl text-white font-bold">Créer un Projet</h1>
 
             </div>
         </div>
-        <div class="flex justify-center ">
-            <form class="w-9/12 flex-direction: column" @submit.prevent="submit">
+        <div class="flex justify-center">
+            <form class="rounded-lg pl-16 bg-white top-56 absolute w-9/12 flex-direction: column" @submit.prevent="submit">
 
                 <h2 class="pb-4 pt-8 font-bold text-3xl ">Responsable projet</h2>
                 <p class="pb-4 font-thin text-sm text-gray-400">Ces informations serviront a savoir qui dirige le projet du coté du client</p>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="pb-4 flex">
                  <label class="w-1/4" for="email">Email</label>
-                <input class="w-1/2 rounded-lg border-gray-300" placeholder="you@example.fr" name="email" type="text" v-model="form.mail_responsable_projet">
+                <input class="w-1/2 rounded-lg border-gray-300" placeholder="you@example.fr" name="email" type="email" v-model="form.mail_responsable_projet">
                 </div>
                 <h2 class="pb-4 pt-8 font-bold text-3xl">Information projet</h2>
 
