@@ -1,5 +1,6 @@
 <template>
     <app-layout>
+        <div id="opacity">
         <div class="relative z-0 w-full bg-gray-900">
             <div class="flex justify-around pt-20 pb-20 z-0 ">
                 <h1 class="pb-10 ml-10 text-4xl text-white font-bold">{{form.raison_sociale_client}}</h1>
@@ -52,7 +53,7 @@
                 </div>
 
                 <h2 class="pb-4 pt-8 font-bold text-3xl ">Adresse</h2>
-                <p class="pb-4 font-thin text-sm text-gray-400">ILocalisation du siège social</p>
+                <p class="pb-4 font-thin text-sm text-gray-400">Localisation du siège social</p>
 
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="pays">Pays</label>
@@ -81,6 +82,7 @@
                  </div>
             <button class="text-white p-3 mb-6 bg-blue-600 rounded-lg" type="submit" :disabled="form.processing">Editer</button>
         </form>
+        </div>
         </div>
 
         <div class="border-4 p-16 rounded-lg" id="none" v-show="isConfirmed">
@@ -154,7 +156,6 @@ export default {
         margin-left: 50%;
         position: absolute;
         transform: translateX(-50%)  translateY(-50%);
-        background-color: grey;
 
     }
 

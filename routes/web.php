@@ -16,7 +16,7 @@ use Inertia\Inertia;
 */
 
 
-Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index']);
+Route::inertia('/', 'Auth/Login');
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 

@@ -1,12 +1,13 @@
 <template>
     <app-layout>
+        <div id="opacity">
     <div class="relative z-0 w-full bg-gray-900">
             <div class="flex justify-around pt-20 pb-20 z-0 ">
                 <h1  class="pb-10 ml-10 text-4xl text-white font-bold">{{ form.titre_projet }}</h1>
                  <button  class="text-white px-6 py-2 mb-6 bg-red-600 rounded-lg" v-on:click="confirmDelete">Delete</button>
             </div>
      </div>
-        <div class="flex justify-center " id="opacity">
+        <div class="flex justify-center" >
 
             <form class="rounded-lg pl-16 bg-white top-56 absolute w-9/12 flex-direction: column" @submit.prevent="submit">
 
@@ -95,14 +96,14 @@
             </form>
 
         </div>
-
-        <div class="border-4 p-16 rounded-lg" id="none" v-show="isConfirmed">
+        </div>
+        <div class="border-4 p-16 rounded-lg bg-gray-50" id="none" v-show="isConfirmed">
             <p>Supprimer le projet {{ form.titre_projet }} </p>
-            <p></p>
             <button class="text-white p-3 mb-6 bg-blue-600 rounded-lg mr-8 mt-8" v-on:click="confirmDelete">Retour</button>
             <button class="text-white p-3 mb-6 bg-red-600 rounded-lg" v-on:click="delete">Delete</button>
 
         </div>
+
     </app-layout>
 
 
@@ -173,7 +174,6 @@ export default {
         margin-left: 50%;
         position: absolute;
         transform: translateX(-50%)  translateY(-50%);
-        background-color: grey;
 
     }
 </style>
