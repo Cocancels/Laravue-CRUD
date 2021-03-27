@@ -44,7 +44,7 @@
                         </p>
 
                     </td>
-                    <td class="pl-6">
+                    <td class="pl-6 text-right pr-8">
                         <inertia-link class="text-blue-500" id="edit-projets" :href="route('projets.edit', { id: projet.id })">Editer</inertia-link>
                     </td>
                 </tr>

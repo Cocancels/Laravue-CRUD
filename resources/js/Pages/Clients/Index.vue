@@ -19,7 +19,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="client in clients">
+            <tr class="pl-6 text text-xl" v-for="client in clients">
                 <td class="pl-6 pt-5 pb-5">{{ client.raison_sociale_client }}</td>
                 <td class="pl-6 pt-5 pb-5">{{ client.description_client }}</td>
                 <td class="pl-6 pt-5 pb-5">
@@ -29,7 +29,7 @@
                         </p>
                     </div>
                 </td>
-                <td class="pr-6 pt-5 pb-5 text-right"><inertia-link id="edit-client" :href="route('clients.edit', { id: client.id })">Editer</inertia-link></td>
+                <td class="text-blue-500 text-right pr-8"><inertia-link id="edit-client" :href="route('clients.edit', { id: client.id })">Editer</inertia-link></td>
             </tr>
             </tbody>
         </table>

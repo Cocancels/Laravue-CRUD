@@ -37,6 +37,6 @@ class DashboardController extends Controller
         if($actualProjet!=0){
             $pourcentage = ($numberProjets * 100) / count($projets);
         }
-        return Inertia::render('Dashboard', compact('numberClients', 'pourcentage'));
+        return Inertia::render('Dashboard', compact('numberClients', 'pourcentage', 'clients', 'projets'));
     }
 }
