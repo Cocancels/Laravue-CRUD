@@ -98,9 +98,13 @@ import AppLayout from "@/Layouts/AppLayout";
 import Button from "@/Jetstream/Button";
 export default {
 
-    props: ['client'],
     name: "Edit",
     components: {Button, AppLayout},
+
+    props:{
+        client: Object,
+        errors: Object
+    },
 
     data(){
         return{
