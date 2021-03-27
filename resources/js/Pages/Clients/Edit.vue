@@ -17,26 +17,38 @@
                 <div  class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="description">Description</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="description" type="text" v-model="form.description_client">
+                    <div class="text-red-600" v-if="errors.description_client">Une description est requise</div>
+
                 </div>
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="raison">Raison Sociale</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="raison" type="text" v-model="form.raison_sociale_client">
+                    <div class="text-red-600"  v-if="errors.raison_sociale_client">Une raison sociale est requise</div>
+
                 </div>
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="statut">Statut Juridique</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="statut" type="text" v-model="form.statut_juridique_client">
+                    <div class="text-red-600"  v-if="errors.statut_juridique_client">Un statut juridique est requis</div>
+
                 </div>
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="capital">Capital</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="capital" type="number" v-model="form.capital_client">
+                    <div class="text-red-600"  v-if="errors.capital_client">Un capital est requis</div>
+
                 </div>
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="siret">Numéro de siret</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="siret" type="number" v-model="form.siret_numero_client">
+                    <div class="text-red-600"  v-if="errors.siret_numero_client">Un numéro de siret est requis</div>
+
                 </div>
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="naf">Code NAF (APE) </label>
                     <input  class="w-1/2 rounded-lg border-gray-300" name="naf" type="text" v-model="form.naf_code_client">
+                    <div class="text-red-600"  v-if="errors.naf_code_client">Un code NAF est requis</div>
+
                 </div>
 
                 <h2 class="pb-4 pt-8 font-bold text-3xl ">Adresse</h2>
@@ -45,19 +57,28 @@
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="pays">Pays</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="pays" type="text" v-model="form.pays_siege_client">
+                    <div class="text-red-600"  v-if="errors.pays_siege_client">Un siège client est requis</div>
+
                 </div>
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="adresse">Adresse</label>
                      <textarea class="w-1/2 rounded-lg border-gray-300" name="adresse" type="text" v-model="form.adresse_siege_client"/>
+                    <div class="text-red-600"  v-if="errors.adresse_siege_client">Une adresse du siège est requise</div>
+
                 </div>
                 <div class="pb-4 pt-4 flex">
                     <label class="text-gray-700 w-1/4" for="codepostal">Code postal </label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="codepostal" type="number" v-model="form.code_postal_siege_client">
+                    <div class="text-red-600"  v-if="errors.code_postal_siege_client">Un code postal est requis</div>
+
+
                 </div>
                  <div class="pb-4 pt-4 flex">
                      <label class="text-gray-700 w-1/4" for="ville">Ville</label>
                      <input class="w-1/2 rounded-lg border-gray-300" name="ville" type="text" v-model="form.ville_siege_client">
-                </div>
+                     <div class="text-red-600"  v-if="errors.ville_siege_client">Une ville est requise</div>
+
+                 </div>
             <button class="text-white p-3 mb-6 bg-blue-600 rounded-lg" type="submit" :disabled="form.processing">Editer</button>
         </form>
         </div>

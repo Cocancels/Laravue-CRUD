@@ -50,6 +50,20 @@ class ProjetsController extends Controller
         $client_name = $request->input('client_id');
         $new_client_id = Client::where("raison_sociale_client", $client_name)->get();
 
+        $request->validate([
+            'client_id' => 'required',
+            'nom_responsable_projet' => 'required|max:30',
+            'prenom_responsable_projet' => 'required|max:30',
+            'telephone_responsable_projet' => 'required|max:11',
+            'mail_responsable_projet' => 'required|max:30',
+            'titre_projet' => 'required|max:30',
+            'description_projet' => 'required',
+            'debut_projet' => 'required',
+            'fin_projet' => 'required',
+            'status_projet' => 'required',
+            'jours_vendus_projet' => 'required',
+        ]);
+
         $projet ->client_id = $new_client_id[0]->id;
         $projet ->nom_responsable_projet = $request->input('nom_responsable_projet');
         $projet ->prenom_responsable_projet = $request->input('prenom_responsable_projet');
@@ -59,7 +73,7 @@ class ProjetsController extends Controller
         $projet ->description_projet = $request->input('description_projet');
         $projet ->debut_projet = $request->input('debut_projet');
         $projet ->fin_projet = $request->input('fin_projet');
-        $projet ->status_projet = "En cours";
+        $projet ->status_projet = $request->input('status_projet');
         $projet ->jours_vendus_projet = $request->input('jours_vendus_projet');
         $projet ->save();
 
@@ -106,6 +120,20 @@ class ProjetsController extends Controller
         $projet = Projet::findorfail($id);
         $client_name = $request->input('client_id');
         $new_client_id = Client::where("raison_sociale_client", $client_name)->get();
+
+        $request->validate([
+            'client_id' => 'required',
+            'nom_responsable_projet' => 'required|max:30',
+            'prenom_responsable_projet' => 'required|max:30',
+            'telephone_responsable_projet' => 'required|max:11',
+            'mail_responsable_projet' => 'required|max:30',
+            'titre_projet' => 'required|max:30',
+            'description_projet' => 'required',
+            'debut_projet' => 'required',
+            'fin_projet' => 'required',
+            'status_projet' => 'required',
+            'jours_vendus_projet' => 'required',
+        ]);
 
         $projet->client_id = $new_client_id[0]->id;
         $projet->nom_responsable_projet = $request->input('nom_responsable_projet');

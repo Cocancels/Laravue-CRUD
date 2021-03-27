@@ -60,6 +60,20 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'description_client' => 'required|max:30',
+            'statut_juridique_client' => 'required|max:30',
+            'raison_sociale_client' => 'required|max:30',
+            'capital_client' => 'required|max:30',
+            'siret_numero_client' => 'required|max:14',
+            'naf_code_client' => 'required|max:5',
+            'pays_siege_client' => 'required|max:30',
+            'adresse_siege_client' => 'required|max:30',
+            'code_postal_siege_client' => 'required|max:5',
+            'ville_siege_client' => 'required|max:30',
+        ]);
+
+
         $client = new Client;
         $client->description_client = $request->input('description_client');
         $client->raison_sociale_client = $request->input('raison_sociale_client');
@@ -109,6 +123,19 @@ class ClientsController extends Controller
     public function update(Request $request, $id)
     {
         $client = Client::findorfail($id);
+
+        $request->validate([
+            'description_client' => 'required|max:30',
+            'statut_juridique_client' => 'required|max:30',
+            'raison_sociale_client' => 'required|max:30',
+            'capital_client' => 'required|max:30',
+            'siret_numero_client' => 'required|max:14',
+            'naf_code_client' => 'required|max:5',
+            'pays_siege_client' => 'required|max:30',
+            'adresse_siege_client' => 'required|max:30',
+            'code_postal_siege_client' => 'required|max:5',
+            'ville_siege_client' => 'required|max:30',
+        ]);
 
         $client->description_client = $request->input('description_client');
         $client->raison_sociale_client = $request->input('raison_sociale_client');
