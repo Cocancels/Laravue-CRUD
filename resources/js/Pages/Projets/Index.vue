@@ -7,7 +7,7 @@
             </div>
         </div>
 
-            <table class="table-fixed z-50 shadow rounded-2xl w-4/5 mx-auto">
+            <table class="rounded-lg ml-32 bg-white top-56 absolute table-fixed z-50 shadow rounded-2xl w-4/5 mx-auto">
                 <thead>
                 <tr class="border-b-2 uppercase text-gray-500">
                     <th class="text-left p-6 w-1/6">Titre</th>

@@ -55,11 +55,15 @@
                  <label class="text-gray-700 w-1/4" for="fin">Fin du projet estimé</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="fin" type="date" v-model="form.fin_projet">
                 </div>
-                <select name="status" id="status" v-model="form.status_projet">
+                <div  class="pb-4  flex">
+                    <label class="text-gray-700 w-1/4" for="status">Status du projet</label>
+                    <select class="w-1/2 rounded-lg border-gray-300" name="status" id="status" v-model="form.status_projet">
                     <option value="En cours">En cours</option>
                     <option value="Terminé">Terminé</option>
                     <option value="Annulé">Annulé</option>
                 </select>
+                </div>
+
                 <div class="pb-4 flex">
                  <label class="text-gray-700 w-1/4" for="vendus">Nombre de jours vendus</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="vendus" type="number" v-model="form.jours_vendus_projet">
