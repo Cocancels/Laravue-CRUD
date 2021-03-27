@@ -11,27 +11,27 @@
                 <p class="pb-4 font-thin text-sm text-gray-400">Informations légales de l'entreprise</p>
 
                 <div  class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="description">Description</label>
+                    <label class="text-gray-700 w-1/4" for="description">Description</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="description" type="text" v-model="form.description_client">
                 </div>
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="raison">Raison Sociale</label>
+                    <label class="text-gray-700 w-1/4" for="raison">Raison Sociale</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="raison" type="text" v-model="form.raison_sociale_client">
                 </div>
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="statut">Statut Juridique</label>
+                    <label class="text-gray-700 w-1/4" for="statut">Statut Juridique</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="statut" type="text" v-model="form.statut_juridique_client">
                 </div>
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="capital">Capital</label>
+                    <label class="text-gray-700 w-1/4" for="capital">Capital</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="capital" type="number" v-model="form.capital_client">
                 </div>
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="siret">Numéro de siret</label>
+                    <label class="text-gray-700 w-1/4" for="siret">Numéro de siret</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="siret" type="number" v-model="form.siret_numero_client">
                 </div>
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="naf">Code NAF (APE) </label>
+                    <label class="text-gray-700 w-1/4" for="naf">Code NAF (APE) </label>
                     <input  class="w-1/2 rounded-lg border-gray-300" name="naf" type="text" v-model="form.naf_code_client">
                 </div>
 
@@ -39,19 +39,19 @@
                 <p class="pb-4 font-thin text-sm text-gray-400">ILocalisation du siège social</p>
 
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="pays">Pays</label>
+                    <label class="text-gray-700 w-1/4" for="pays">Pays</label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="pays" type="text" v-model="form.pays_siege_client">
                 </div>
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="adresse">Adresse</label>
+                    <label class="text-gray-700 w-1/4" for="adresse">Adresse</label>
                      <textarea class="w-1/2 rounded-lg border-gray-300" name="adresse" type="text" v-model="form.adresse_siege_client"/>
                 </div>
                 <div class="pb-4 pt-4 flex">
-                    <label class=" w-1/4" for="codepostal">Code postal </label>
+                    <label class="text-gray-700 w-1/4" for="codepostal">Code postal </label>
                     <input class="w-1/2 rounded-lg border-gray-300" name="codepostal" type="number" v-model="form.code_postal_siege_client">
                 </div>
                  <div class="pb-4 pt-4 flex">
-                     <label class=" w-1/4" for="ville">Ville</label>
+                     <label class="text-gray-700 w-1/4" for="ville">Ville</label>
                      <input class="w-1/2 rounded-lg border-gray-300" name="ville" type="text" v-model="form.ville_siege_client">
                 </div>
 

@@ -13,25 +13,25 @@
                 <p class="pb-4 font-thin text-sm text-gray-400">Ces informations serviront a savoir qui dirige le projet du coté du client</p>
 
                 <div class="pb-4 pt-4 flex">
-                <label class=" w-1/4" for="client">Client</label>
+                <label class=" text-gray-700 w-1/4" for="client">Client</label>
                 <select  class="w-36 rounded-lg border-gray-300" name="client" v-model="form.client_id">
                     <option v-for="client in clients">{{ client.raison_sociale_client }}</option>
                 </select>
                 </div>
                 <div class=" pb-4 flex">
-                 <label class=" w-1/4" for="nom">Nom</label>
+                 <label class="text-gray-700 w-1/4" for="nom">Nom</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="nom" type="text" v-model="form.nom_responsable_projet">
                 </div>
                 <div class="pb-4 flex">
-                 <label class="w-1/4" for="prenom">Prénom</label>
+                 <label class="text-gray-700 w-1/4" for="prenom">Prénom</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="prenom" type="text" v-model="form.prenom_responsable_projet">
                 </div>
                 <div class="pb-4 flex">
-                 <label class="w-1/4" for="telephone">Téléphone</label>
+                 <label class="text-gray-700 w-1/4" for="telephone">Téléphone</label>
                 <input class="w-1/2 rounded-lg border-gray-300" placeholder="+33 06 06 06 06 60" name="telephone" type="number" v-model="form.telephone_responsable_projet">
                 </div>
                 <div class="pb-4 flex">
-                 <label class="w-1/4" for="email">Email</label>
+                 <label class="text-gray-700 w-1/4" for="email">Email</label>
                 <input class="w-1/2 rounded-lg border-gray-300" placeholder="you@example.fr" name="email" type="email" v-model="form.mail_responsable_projet">
                 </div>
                 <h2 class="pb-4 pt-8 font-bold text-3xl">Information projet</h2>
@@ -39,23 +39,23 @@
                 <p class="pb-4 font-thin text-sm text-gray-400">Use a permanent address where you can receive mail.</p>
 
                <div class="pb-4 flex">
-                 <label class="w-1/4" for="titre">Titre</label>
+                 <label class="text-gray-700 w-1/4" for="titre">Titre</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="titre" type="text" v-model="form.titre_projet">
                 </div>
                <div class="pb-4 flex">
-                 <label class="w-1/4" for="description">Description</label>
+                 <label class="text-gray-700 w-1/4" for="description">Description</label>
                 <textarea class="w-1/2 rounded-lg border-gray-300" name="description" type="text" v-model="form.description_projet"/>
                 </div>
                 <div class="pb-4 flex">
-                 <label class="w-1/4" for="debut">Début du projet</label>
+                 <label class="text-gray-700 w-1/4" for="debut">Début du projet</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="debut" type="date" v-model="form.debut_projet">
                 </div>
                <div class="pb-4  flex">
-                 <label class="w-1/4" for="fin">Fin du projet estimé</label>
+                 <label class="text-gray-700 w-1/4" for="fin">Fin du projet estimé</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="fin" type="date" v-model="form.fin_projet">
                 </div>
                 <div class="pb-4 flex">
-                 <label class="w-1/4" for="vendus">Nombre de jours vendus</label>
+                 <label class="text-gray-700 w-1/4" for="vendus">Nombre de jours vendus</label>
                 <input class="w-1/2 rounded-lg border-gray-300" name="vendus" type="number" v-model="form.jours_vendus_projet">
                 </div>
 
