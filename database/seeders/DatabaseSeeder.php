@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
     {
       Schema::disableForeignKeyConstraints();
       DB::table('projets')->truncate();
-      Client::factory(10)->create();
-      Projet::factory(10)->create();
+      Client::factory(5)->create();
+      Projet::factory(20)->create();
       Schema::enableForeignKeyConstraints();
     }
 }

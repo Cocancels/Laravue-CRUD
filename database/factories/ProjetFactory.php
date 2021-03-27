@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Client;
 use App\Models\Projet;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,7 @@ class ProjetFactory extends Factory
     public function definition()
     {
         return [
-         'client_id'=>$this->faker->numberBetween(1,10),
+        'client_id' => Client::inRandomOrder()->first()->id,
          'nom_responsable_projet'=> $this->faker->lastName,
          'prenom_responsable_projet'=> $this->faker->firstName(),
          'telephone_responsable_projet'=>$this->faker->randomNumber(8),
